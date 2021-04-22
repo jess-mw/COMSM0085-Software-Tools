@@ -1,0 +1,31 @@
+#!/bin/sh
+
+#Similar to -Werror in C
+set -euo pipefail
+
+#Gets input from argv and compiles/ runs/ builds etc
+if [ "$1" = "compile" ]
+then
+    file=$(basename "$2" .c)
+    gcc -Wall -std=c11 -g ${​​​​file}​​​​.c -o ${​​​​file}​​​​
+fi
+
+if [ "$1" = "run" ]
+then
+    file=$(basename "$2" .c)
+    ./${​​​​file}​​​​
+fi
+
+if [ "$1" = "build" ]
+then
+    file=$(basename "$2" .c)
+    gcc -Wall -std=c11 -g ${​​​​file}​​​​.c -o ${​​​​file}​​​​ && ./${​​​​file}​​​​
+else
+    echo "Please enter either compile/ run or build followed by the C file"
+fi [ "$1" = "build" ]
+then
+    file=$(basename "$2" .c)
+    gcc -Wall -std=c11 -g ${​​​​file}​​​​.c -o ${​​​​file}​​​​ && ./${​​​​file}​​​​
+else
+    echo "Please enter either compile/ run or build followed by the C file"
+fi
