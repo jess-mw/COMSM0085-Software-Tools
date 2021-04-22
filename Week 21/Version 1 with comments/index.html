@@ -1,0 +1,39 @@
+//specifying standard
+<!DOCTYPE html>
+<html lang="en">
+   //head is the sibling of body
+   //head is the metadata
+   <head>
+      <title>Website about dogs</title>
+      //specifying what kind of character set we will use, using utf-8 encoding
+      <meta value="utf-8">
+      //put styling manually here
+      <style>
+         h1{
+            colour: red;
+         }
+      </style>
+      //or link style sheet
+      <link rel="stylesheet" href="style.css" type="text/css">
+   </head>
+   //body is the presentation/structured place
+   <body>
+      //heading tag
+      <h1>My dogs:</h1>
+         <table class="dogs">
+            //top row
+            <tr>
+               //table headings
+               <th>Name</th>
+               <th>Breed</th>
+            </tr>
+            <tr>
+               //a cell - input data here
+               <td>My name</td>
+               <td>My breed</td>
+            </tr>
+            //putting an image tag, alt if image can't be loaded
+            <img alt="German Shepard" src="https://upload.wikimedia.org/wikipedia/commons/d/d0/German_Shepherd_-_DSC_0346_%2810096362833%29.jpg">
+         </table>
+   </body>
+</html>
