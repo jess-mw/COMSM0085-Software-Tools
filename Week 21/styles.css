@@ -1,0 +1,15 @@
+h1 {
+   color: blue;
+}
+
+.pets {
+   border: 1px black solid;
+}
+
+.pets th {
+   border-bottom: 1px black solid;
+}
+
+.pets tr:first-of-type th {
+   text-align: right;
+}

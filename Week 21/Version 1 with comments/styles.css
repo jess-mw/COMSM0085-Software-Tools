@@ -1,0 +1,21 @@
+//defining styles here
+h1 {
+   colour: blue;
+}
+
+//applies to dogs table
+.dogs {
+   //a style property you can use
+   border: 1px black solid;
+}
+
+//applies to th element within dogs table
+.dogs th {
+   border-bottom: 1px black solid;
+}
+
+//apply something to the first row (apply to the first element of this type)
+.dogs tr:first-of-type th {
+   //align text to the right side
+   text-align: right;
+}

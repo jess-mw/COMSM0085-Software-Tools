@@ -1,0 +1,19 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "generic/alpine310"
+  config.vm.synced_folder ".", "/vagrant"
+
+  config.vm.provision "shell", inline: <<-SHELL
+    apk add libc6-compat util-linux nano git mariadb mariadb-client openjdk8 mavan
+    /etc/init.d/mariadb setup
+    rc-update add mariadb default
+    rc-service mariadb start
+    mysql -u root -e 'source /vagrant/sample-data.sql'
+    mysql -u root -e 'source /vagrant/secure-setup.sql'
+    echo 'export PATH="$PATH:/usr/lib/jvm/java-1.8-openjdk/bin"' >> /home/vagrant/.profile
+  SHELL
+  config.vm.provision :shell, run: 'always', inline: <<-SHELL
+    umount /vagrant
+    /sbin/mount.vboxsf -o uid=1000 -o gid=1000 vagrant /vagrant
+    chmod go+rx /vagrant
+  SHELL
+end
