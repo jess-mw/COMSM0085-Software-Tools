@@ -11,5 +11,21 @@ h1 {
 }
 
 .pets tr:first-of-type th {
-   text-align: right;
+   text-align: left;
+}
+
+.yourPetsDisplay {
+   border: 1px black solid;
+}
+
+.yourPetsDisplay th {
+   border-bottom: 1px black solid;
+}
+
+.yourPetsDisplay tr:first-of-type th {
+   text-align: left;
+}
+
+.petsTable tr:first-of-type th {
+   text-align: left;
 }

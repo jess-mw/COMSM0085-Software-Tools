@@ -1,41 +1,59 @@
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
       <title>Website About Pets</title>
       <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <!-- Latest compiled JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
       <link rel="stylesheet" href="styles.css" type="text/css">
       <link rel="script" href="script.js" type="application/javascript">
    </head>
    <body>
-      <h1>Enter Your Pets:</h1>
-      <table class ="yourPets">
-         <tr>
-            <td>Name</td>
-            <td><input type="text" name="petName" id="petName"></td>
-         </tr>
-         <tr>
-            <td>Species</td>
-            <td><input type="text" name="species" id="species"></td>
-         </tr>
-         <tr>
-            <td>&nbsp</td>
-            <td align="centre"><input type="button" value="Submit" name="submit" onClick="addRow()"/></td>
-         </tr>
-      </table>
-      <h1>Your Pets:</h1>
-      <table class ="yourPetsDisplay">
-         <tr>
-            <th>Name</th>
-            <th>Species</th>
-         </tr>
-         <tr>
-            <td><div id="yourPetsDisplayName"></div></td>
-            <td><div id="yourPetsDisplaySpecies"></div></td>
-         </tr>
-      </table>
-      <h1>Our Pets:</h1>
-         <button onClick="handleClick()">Load my pets</button>
-         <table id="petsTable" class="pets"></table>
-         <script src="script.js"></script>
+      <div class="container">
+         <h2 class="text-danger">Enter Your Pets:</h2>
+         <table class ="yourPets">
+            <div class="row">
+               <td class="bg-info">Name</td>
+               <td><input type="text" name="petName" id="petName"></td>
+            </div>
+            <tr>
+               <td class="bg-success">Species</td>
+               <td><input type="text" name="species" id="species"></td>
+            </tr>
+            <tr>
+               <td>&nbsp</td>
+               <td align="centre"><input type="button" class="btn-warning" value="Submit" name="submit" onClick="addRow()"/></td>
+            </tr>
+         </table>
+      </div>
+      <div class="container">
+         <h2 class="text-info">Your Pets:</h2>
+         <table class ="yourPetsDisplay table table-bordered table-hover table-responsive">
+            <tr>
+               <th><mark>Name</mark></th>
+               <th><mark>Species</mark></th>
+            </tr>
+            <tr>
+               <td><div class="col-sm-4" id="yourPetsDisplayName"></div></td>
+               <td><div class="col-sm-4" id="yourPetsDisplaySpecies"></div></td>
+            </tr>
+         </table>
+      </div>
+      <div class="container">
+         <h2 class="text-warning">Our Pets:</h2>
+            <button class="btn-primary" data-toggle="dropdown" onClick="handleClick()">
+               Load our pets
+               <span class="caret"></span>
+
+            </button>
+            <table id="petsTable" class="pets table table-hover"></table>
+            <script src="script.js"></script>
+      </div>
    </body>
 </html>
